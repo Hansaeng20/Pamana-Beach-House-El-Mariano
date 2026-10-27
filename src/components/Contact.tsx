@@ -25,6 +25,12 @@ const contactDetails = [
         href: 'tel:+639156380004',
     },
     {
+        icon: FaFacebookF,
+        label: 'Message Us on Facebook',
+        value: 'Pamana Beach House / El Mariano',
+        href: 'https://www.facebook.com/PamanaBeachHouse',
+    },
+    {
         icon: MapPin,
         label: 'Find Us',
         value: 'Calatagan, Batangas, Philippines',
@@ -84,8 +90,14 @@ export default function Contact() {
 
                                     <a
                                         href={item.href}
-                                        target={item.icon === MapPin ? '_blank' : undefined}
-                                        rel={item.icon === MapPin ? 'noopener noreferrer' : undefined}
+                                        target={
+                                            item.href.startsWith('https://') ? '_blank' : undefined
+                                        }
+                                        rel={
+                                            item.href.startsWith('https://')
+                                                ? 'noopener noreferrer'
+                                                : undefined
+                                        }
                                         className="break-words font-serif text-xl transition-colors hover:text-[#CBB79A] md:text-2xl"
                                     >
                                         {item.value}

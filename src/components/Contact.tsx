@@ -137,7 +137,7 @@ export default function Contact() {
                 </div>
 
                 <footer className="mt-24 flex flex-col gap-4 border-t border-white/20 pt-8 text-[11px] uppercase tracking-[0.16em] text-white/50 md:flex-row md:justify-between">
-                    <p>© {new Date().getFullYear()} Pamana Beach House</p>
+                    <p>© {new Date().getFullYear()} Pamana Beach House | El Mariano</p>
                     <p>Calatagan, Batangas · Philippines</p>
                 </footer>
             </div>

@@ -45,7 +45,7 @@ function App() {
               className="relative z-50 flex flex-col leading-none"
             >
               <span className="font-serif text-[30px] tracking-[0.08em]">
-                Pamana | El Mariano
+                Pamana | ElMariano
               </span>
               <span className="mt-1 text-[9px] uppercase tracking-[0.34em]">
                 Beach House

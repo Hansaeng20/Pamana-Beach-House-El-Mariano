@@ -11,30 +11,33 @@ import {
     FaInstagram,
 } from 'react-icons/fa'
 
+import Reveal from './Reveal'
+import { email, facebook, instagram, maps, messenger, phoneDisplay, phoneHref } from '../data/site'
+
 const contactDetails = [
     {
         icon: Mail,
         label: 'Email Us',
-        value: 'pamanabeachhouse@gmail.com',
-        href: 'mailto:pamanabeachhouse@gmail.com',
+        value: email,
+        href: `mailto:${email}`,
     },
     {
         icon: Phone,
         label: 'Call Us',
-        value: '0915 638 0004',
-        href: 'tel:+639156380004',
+        value: phoneDisplay,
+        href: phoneHref,
     },
     {
         icon: FaFacebookF,
         label: 'Message Us on Facebook',
         value: 'Pamana Beach House / El Mariano',
-        href: 'https://www.facebook.com/PamanaBeachHouse',
+        href: facebook,
     },
     {
         icon: MapPin,
         label: 'Find Us',
         value: 'Calatagan, Batangas, Philippines',
-        href: 'https://www.google.com/maps/place/Pamana+Beach+House/@13.8463063,120.6974701,17z/data=!3m1!4b1!4m9!3m8!1s0x33bdbac7e7f7e125:0x64626603bd64d402!5m2!4m1!1i2!8m2!3d13.8463011!4d120.700045!16s%2Fg%2F11c71k2d1_?entry=ttu&g_ep=EgoyMDI2MTAyNS4wIKXMDSoASAFQAw%3D%3D',
+        href: maps,
     },
 ]
 
@@ -46,33 +49,44 @@ export default function Contact() {
         >
             <div className="mx-auto max-w-[1400px]">
                 <p className="mb-8 text-xs uppercase tracking-[0.3em] text-[#CBB79A]">
-                    02 / Get in Touch
+                    06 / Get in Touch
                 </p>
 
                 <div className="grid gap-16 lg:grid-cols-2 lg:gap-28">
-                    <div>
+                    <Reveal>
                         <h2 className="font-serif text-5xl leading-[1.1] tracking-tight md:text-7xl">
                             Your next escape
                             <br />
-                            <span className="italic">starts here.</span>
+                            <span className="italic text-[#E8D9BF]">starts here.</span>
                         </h2>
 
                         <p className="mt-8 max-w-md text-[15px] leading-8 text-white/70">
-                            Have questions about your stay, availability, or
-                            reservations? We'd love to hear from you.
-                            Reach out and start planning your coastal getaway.
+                            Questions about dates, rates or what to bring?
+                            We'd love to hear from you. Send a message and
+                            we'll help you plan the beach trip everyone will
+                            remember.
                         </p>
 
-                        <a
-                            href="mailto:pamanabeachhouse@gmail.com?subject=Pamana%20Beach%20House%20Booking%20Inquiry"
-                            className="mt-12 inline-flex items-center gap-5 border border-[#CBB79A] px-7 py-4 text-xs uppercase tracking-[0.18em] transition-colors hover:bg-[#CBB79A] hover:text-[#243D39]"
-                        >
-                            Send an Inquiry
-                            <ArrowUpRight size={17} />
-                        </a>
-                    </div>
+                        <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+                            <a
+                                href={messenger}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-5 bg-[#CBB79A] px-7 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#243D39] transition-colors hover:bg-white"
+                            >
+                                Message Us Now
+                                <ArrowUpRight size={17} />
+                            </a>
+                            <a
+                                href={`mailto:${email}?subject=Pamana%20Beach%20House%20Booking%20Inquiry`}
+                                className="inline-flex items-center justify-center gap-5 border border-[#CBB79A] px-7 py-4 text-xs uppercase tracking-[0.18em] transition-colors hover:bg-[#CBB79A] hover:text-[#243D39]"
+                            >
+                                Email an Inquiry
+                            </a>
+                        </div>
+                    </Reveal>
 
-                    <div className="space-y-9 lg:pt-4">
+                    <Reveal delay={150} className="space-y-9 lg:pt-4">
                         {contactDetails.map((item) => {
                             const Icon = item.icon
 
@@ -113,7 +127,7 @@ export default function Contact() {
 
                             <div className="flex flex-wrap gap-4">
                                 <a
-                                    href="https://www.facebook.com/PamanaBeachHouse"
+                                    href={facebook}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Pamana Beach House on Facebook"
@@ -123,7 +137,7 @@ export default function Contact() {
                                 </a>
 
                                 <a
-                                    href="https://www.instagram.com/pamanabeachhouse/"
+                                    href={instagram}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Pamana Beach House on Instagram"
@@ -133,7 +147,7 @@ export default function Contact() {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </Reveal>
                 </div>
 
                 <footer className="mt-24 flex flex-col gap-4 border-t border-white/20 pt-8 text-[11px] uppercase tracking-[0.16em] text-white/50 md:flex-row md:justify-between">

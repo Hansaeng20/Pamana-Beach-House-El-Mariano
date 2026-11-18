@@ -1,8 +1,9 @@
 
 import { useEffect, useState } from 'react'
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from 'lucide-react'
+import Reveal from './Reveal'
 
-type Category = 'All' | 'Beach House' | 'Interiors' | 'Beach'
+type Category = 'All' | 'Beach House' | 'Beach'
 
 type GalleryImage = {
     id: number
@@ -19,7 +20,6 @@ const categories: Category[] = [
     'Beach',
 ]
 
-// Temporary images — replace with actual Pamana photos later.
 const galleryImages: GalleryImage[] = [
     {
         id: 1,
@@ -40,7 +40,7 @@ const galleryImages: GalleryImage[] = [
     {
         id: 3,
         src: '/images/gallery/bedroom.jpeg',
-        title: 'Slow Mornings',
+        title: 'Sunny Courtyard',
         subtitle: 'The Beach House',
         category: 'Beach House',
         layout: 'md:col-span-4',
@@ -48,9 +48,9 @@ const galleryImages: GalleryImage[] = [
     {
         id: 4,
         src: '/images/gallery/nature.jpeg',
-        title: 'Natural Beauty',
-        subtitle: 'The Surroundings',
-        category: 'Beach',
+        title: 'The Bamboo Gate',
+        subtitle: 'Your Welcome',
+        category: 'Beach House',
         layout: 'md:col-span-4',
     },
     {
@@ -136,25 +136,25 @@ export default function Gallery() {
             <div className="mx-auto max-w-[1400px]">
 
                 {/* Editorial heading */}
-                <div className="mb-14 flex flex-col justify-between gap-8 md:mb-20 lg:flex-row lg:items-end">
+                <Reveal className="mb-14 flex flex-col justify-between gap-8 md:mb-20 lg:flex-row lg:items-end">
                     <div>
                         <p className="mb-8 text-xs uppercase tracking-[0.3em] text-[#947A60]">
-                            03 / The Gallery
+                            04 / The Gallery
                         </p>
 
                         <h2 className="font-serif text-6xl leading-[1] tracking-tight text-[#243D39] md:text-8xl">
                             A glimpse of
                             <br />
-                            <span className="italic">paradise.</span>
+                            <span className="italic text-[#947A60]">paradise.</span>
                         </h2>
                     </div>
 
                     <p className="max-w-sm text-[15px] leading-8 text-[#777A72]">
-                        Every corner tells a story. Explore the spaces,
-                        scenery, and moments that make a coastal escape
-                        so memorable.
+                        Every corner tells a story. Take a peek at the
+                        spaces, scenery and golden hours waiting for you —
+                        then picture yourself right here.
                     </p>
-                </div>
+                </Reveal>
 
                 {/* Category filters */}
                 <div className="mb-10 flex flex-wrap gap-3 border-b border-[#243D39]/15 pb-7">
@@ -186,12 +186,7 @@ export default function Gallery() {
                             className={`group relative cursor-pointer overflow-hidden bg-[#EAE5DB] text-left ${image.layout}`}
                             aria-label={`View ${image.title}`}
                         >
-                            <div
-                                className={`relative ${image.layout === 'md:col-span-8'
-                                    ? 'h-[350px] md:h-[560px]'
-                                    : 'h-[350px] md:h-[560px]'
-                                    }`}
-                            >
+                            <div className="relative h-[350px] md:h-[560px]">
                                 <img
                                     src={image.src}
                                     alt={image.title}
@@ -235,10 +230,10 @@ export default function Gallery() {
                     </div>
 
                     <a
-                        href="#contact"
-                        className="inline-flex items-center gap-4 border-b border-[#243D39] pb-3 text-xs uppercase tracking-[0.2em] text-[#243D39]"
+                        href="#book"
+                        className="inline-flex items-center gap-4 bg-[#243D39] px-7 py-4 text-xs uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#947A60]"
                     >
-                        Plan Your Visit
+                        Make Your Own Memories
                         <ArrowUpRight size={18} />
                     </a>
                 </div>

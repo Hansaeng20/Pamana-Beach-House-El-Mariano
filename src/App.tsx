@@ -1,4 +1,8 @@
 import Navbar from './components/Navbar'
+import ScrollProgress from './components/ScrollProgress'
+import DayAtPamana from './components/DayAtPamana'
+import TripPlanner from './components/TripPlanner'
+import GettingThere from './components/GettingThere'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
 import Story from './components/Story'
@@ -14,16 +18,20 @@ import FloatingBook from './components/FloatingBook'
 function App() {
   return (
     <main className="min-h-screen overflow-x-clip bg-[#F7F4EE]">
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <Marquee />
       <Story />
       <Highlights />
+      <DayAtPamana />
       <Stay />
       <PerfectFor />
       <Gallery />
       <SunsetCTA />
+      <TripPlanner />
       <HowToBook />
+      <GettingThere />
       <Contact />
       <FloatingBook />
     </main>

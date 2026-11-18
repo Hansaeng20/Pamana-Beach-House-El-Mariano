@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
-import { messenger } from '../data/site'
 
 const navigation = [
     { label: 'The Story', href: '#story' },
     { label: 'Experiences', href: '#highlights' },
     { label: 'The Stay', href: '#stay' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'Book', href: '#book' },
+    { label: 'Plan Your Trip', href: '#plan' },
 ]
 
 export default function Navbar() {
@@ -64,9 +63,7 @@ export default function Navbar() {
                 </div>
 
                 <a
-                    href={messenger}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#plan"
                     className={`hidden items-center gap-3 px-6 py-3 text-[11px] uppercase tracking-[0.16em] transition-colors lg:flex ${solid
                         ? 'bg-[#243D39] text-white hover:bg-[#947A60]'
                         : 'border border-white/70 hover:bg-white hover:text-[#243D39]'
@@ -102,9 +99,8 @@ export default function Navbar() {
                     ))}
 
                     <a
-                        href={messenger}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="#plan"
+                        onClick={() => setMenuOpen(false)}
                         className="mt-5 inline-flex w-fit items-center gap-3 bg-[#CBB79A] px-7 py-4 text-xs uppercase tracking-widest text-[#243D39]"
                     >
                         Book Your Stay

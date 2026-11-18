@@ -1,15 +1,14 @@
 import { ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
-import { images, messenger } from '../data/site'
+import { images } from '../data/site'
 
 export default function SunsetCTA() {
     return (
         <section className="relative overflow-hidden bg-[#1c2b28] px-6 py-32 text-center text-white md:py-48">
-            <img
-                src={images.sunset}
-                alt=""
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover"
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-cover bg-center md:bg-fixed"
+                style={{ backgroundImage: `url(${images.sunset})` }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1c2b28]/60 via-[#1c2b28]/30 to-[#1c2b28]/80" />
 
@@ -29,9 +28,7 @@ export default function SunsetCTA() {
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <a
-                        href={messenger}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="#plan"
                         className="group inline-flex items-center gap-4 bg-[#CBB79A] px-9 py-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#243D39] shadow-[0_10px_40px_-10px_rgba(203,183,154,0.8)] transition-colors hover:bg-white"
                     >
                         Book Your Getaway

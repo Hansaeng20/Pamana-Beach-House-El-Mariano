@@ -1,26 +1,29 @@
+import { ArrowUpRight, Check } from 'lucide-react'
+import Reveal from './Reveal'
+import { images, messenger } from '../data/site'
 
-import { ArrowUpRight, ArrowRight } from 'lucide-react'
-
-const accommodations = [
+const features = [
     {
         number: '01',
+        eyebrow: 'The Experience',
         title: 'Coastal Living',
-        subtitle: 'A place to slow down',
+        subtitle: 'Your home by the water',
         description:
-            'Step away from the everyday and enjoy the simple pleasures of life by the sea. A welcoming space for restful mornings and meaningful moments.',
-        image:
-            'https://scontent.fcrk3-4.fna.fbcdn.net/v/t39.30808-6/468323371_926331349454716_8452679089656683983_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEJqH8IYVru9hQHnWG1xYfKu_p-hMX6nJW7-n6ExfqcldpsxllfxKA2m792IPZwC2RmHL21oTQhTvxY3Ty1ds6W&_nc_ohc=I2aPFs-pP8EQ7kNvwFEHTSB&_nc_oc=Adqdv9lRwEc9vCA0IwquVcQzn5Se7-b22AnqWeyv8kpMIJsk_rq7vw1jM8WfhqyGBTU&_nc_zt=23&_nc_ht=scontent.fcrk3-4.fna&_nc_gid=IAxwr98vKR4HmC6C9xZArw&_nc_ss=7b2a8&oh=00_AQP2wrMpro_Xc04TeFJneCD9BQ6uAn7RxMKPL6o6NGDmXA&oe=6AE627C4',
-        alt: 'Warm and inviting coastal accommodation',
+            'Glass doors open to the sea breeze, stepping stones lead straight to the sand, and the pier is just a short stroll away. This is the beach house you\'ve been daydreaming about at your desk.',
+        perks: ['Steps from the shoreline', 'Pier & seaside cabana', 'Shaded beachfront tables'],
+        image: images.shore,
+        alt: 'Modern beach house with glass doors facing the sea and pier',
     },
     {
         number: '02',
+        eyebrow: 'Slow Living',
         title: 'Rest & Unwind',
-        subtitle: 'Comfort in every moment',
+        subtitle: 'Room to breathe, together',
         description:
-            'Make yourself at home, settle into a slower rhythm, and spend more time enjoying the company of the people who matter most.',
-        image:
-            'https://scontent.fcrk3-1.fna.fbcdn.net/v/t39.30808-6/481080375_1072370951578523_5750683808712902434_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEN6Y47962WidqFsoaGTvCeX2_L33VUlr1fb8vfdVSWvY_V5vppbFBv-jkbhyykyrb1SBfVZ6Q84liGIg814JTM&_nc_ohc=jDT0RD8uIJoQ7kNvwHtPmVs&_nc_oc=Ado-95wtOAw32W_-tfE4qG0xWFus-Xxqt1uTnzJFsxcK1MSvTEtGDiwOz9dPi7H60NE&_nc_zt=23&_nc_ht=scontent.fcrk3-1.fna&_nc_gid=HX30ZLCuxnQJaCtCJx8LGQ&_nc_ss=7b2a8&oh=00_AQNuBZoQtTfM27J_STN9ornjg0vjornJkNa3RPne6h0ixQ&oe=6AE63D37',
-        alt: 'Comfortable bedroom with warm natural tones',
+            'Wide verandas, a sunny courtyard and cozy, lantern-lit corners — space for kids to run around, titos and titas to chat, and everyone to finally slow down.',
+        perks: ['Spacious veranda & courtyard', 'Lantern-lit garden paths', 'Perfect for big groups'],
+        image: images.courtyard,
+        alt: 'Sunny courtyard with wooden slatted roof and native-style beach house',
     },
 ]
 
@@ -31,129 +34,86 @@ export default function Stay() {
             className="scroll-mt-16 bg-[#EEEAE2] px-6 py-24 md:px-12 md:py-32 lg:px-20"
         >
             <div className="mx-auto max-w-[1400px]">
-
-                {/* Editorial header */}
-                <div className="mb-16 flex flex-col justify-between gap-10 lg:mb-24 lg:flex-row lg:items-end">
+                <Reveal className="mb-16 flex flex-col justify-between gap-10 lg:mb-24 lg:flex-row lg:items-end">
                     <div>
                         <p className="mb-8 text-xs uppercase tracking-[0.3em] text-[#947A60]">
-                            02 / The Stay
+                            03 / The Stay
                         </p>
-
                         <h2 className="font-serif text-6xl leading-[0.98] tracking-tight text-[#243D39] md:text-8xl">
                             Stay a little
                             <br />
-                            <span className="italic">longer.</span>
+                            <span className="italic text-[#947A60]">longer.</span>
                         </h2>
                     </div>
-
-                    <p className="max-w-sm text-[15px] leading-8 text-[#777A72]">
-                        A coastal escape where time moves differently.
-                        Discover the simple beauty of slowing down
-                        and making every moment count.
+                    <p className="max-w-sm text-[15px] leading-8 text-[#5f625b]">
+                        One night is never quite enough. Come for a quick weekend —
+                        and leave already planning your next trip back.
                     </p>
-                </div>
+                </Reveal>
 
-                {/* Main accommodation feature */}
-                <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
-                    <div className="group relative overflow-hidden lg:col-span-7">
-                        <img
-                            src={accommodations[0].image}
-                            alt={accommodations[0].alt}
-                            loading="lazy"
-                            className="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-[650px]"
-                        />
-
-                        <span className="absolute bottom-6 left-6 text-xs tracking-[0.2em] text-white">
-                            PAMANA / 01
-                        </span>
-                    </div>
-
-                    <div className="lg:col-span-5">
-                        <p className="mb-6 text-xs tracking-[0.25em] text-[#947A60]">
-                            {accommodations[0].number} / THE EXPERIENCE
-                        </p>
-
-                        <h3 className="font-serif text-5xl leading-tight text-[#243D39] md:text-6xl">
-                            {accommodations[0].title}
-                        </h3>
-
-                        <p className="mt-5 text-xs uppercase tracking-[0.25em] text-[#947A60]">
-                            {accommodations[0].subtitle}
-                        </p>
-
-                        <p className="mt-9 max-w-md text-[15px] leading-8 text-[#777A72]">
-                            {accommodations[0].description}
-                        </p>
-
-                        <a
-                            href="#contact"
-                            className="mt-10 inline-flex items-center gap-5 border-b border-[#243D39] pb-3 text-xs uppercase tracking-[0.2em] text-[#243D39] transition-all hover:gap-8"
+                {features.map((item, index) => {
+                    const flipped = index % 2 === 1
+                    return (
+                        <div
+                            key={item.number}
+                            className={`grid items-center gap-12 lg:grid-cols-12 lg:gap-20 ${index > 0 ? 'mt-24 lg:mt-36' : ''}`}
                         >
-                            Inquire About Your Stay
-                            <ArrowUpRight size={18} />
-                        </a>
-                    </div>
-                </div>
+                            <Reveal
+                                className={`group relative overflow-hidden lg:col-span-7 ${flipped ? 'lg:order-2' : ''}`}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.alt}
+                                    loading="lazy"
+                                    className="h-[420px] w-full object-cover transition-transform duration-[1.5s] group-hover:scale-105 md:h-[640px]"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                                <span className="absolute bottom-6 left-6 text-xs tracking-[0.2em] text-white">
+                                    PAMANA / {item.number}
+                                </span>
+                            </Reveal>
 
-                {/* Second accommodation feature */}
-                <div className="mt-24 grid items-center gap-12 lg:mt-36 lg:grid-cols-12 lg:gap-20">
-                    <div className="order-2 lg:order-1 lg:col-span-5 lg:pl-12">
-                        <p className="mb-6 text-xs tracking-[0.25em] text-[#947A60]">
-                            {accommodations[1].number} / SLOW LIVING
-                        </p>
+                            <Reveal
+                                delay={150}
+                                className={`lg:col-span-5 ${flipped ? 'lg:order-1 lg:pl-12' : ''}`}
+                            >
+                                <p className="mb-6 text-xs uppercase tracking-[0.25em] text-[#947A60]">
+                                    {item.number} / {item.eyebrow}
+                                </p>
+                                <h3 className="font-serif text-5xl leading-tight text-[#243D39] md:text-6xl">
+                                    {item.title}
+                                </h3>
+                                <p className="mt-5 text-xs uppercase tracking-[0.25em] text-[#947A60]">
+                                    {item.subtitle}
+                                </p>
+                                <p className="mt-8 max-w-md text-[15px] leading-8 text-[#5f625b]">
+                                    {item.description}
+                                </p>
 
-                        <h3 className="font-serif text-5xl leading-tight text-[#243D39] md:text-6xl">
-                            {accommodations[1].title}
-                        </h3>
+                                <ul className="mt-8 space-y-3">
+                                    {item.perks.map((perk) => (
+                                        <li key={perk} className="flex items-center gap-3 text-sm text-[#243D39]">
+                                            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#243D39] text-[#E8D9BF]">
+                                                <Check size={13} />
+                                            </span>
+                                            {perk}
+                                        </li>
+                                    ))}
+                                </ul>
 
-                        <p className="mt-5 text-xs uppercase tracking-[0.25em] text-[#947A60]">
-                            {accommodations[1].subtitle}
-                        </p>
-
-                        <p className="mt-9 max-w-md text-[15px] leading-8 text-[#777A72]">
-                            {accommodations[1].description}
-                        </p>
-
-                        <a
-                            href="#contact"
-                            className="mt-10 inline-flex items-center gap-5 border-b border-[#243D39] pb-3 text-xs uppercase tracking-[0.2em] text-[#243D39] transition-all hover:gap-8"
-                        >
-                            Make an Inquiry
-                            <ArrowUpRight size={18} />
-                        </a>
-                    </div>
-
-                    <div className="group order-1 relative overflow-hidden lg:order-2 lg:col-span-7">
-                        <img
-                            src={accommodations[1].image}
-                            alt={accommodations[1].alt}
-                            loading="lazy"
-                            className="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-[600px]"
-                        />
-
-                        <span className="absolute bottom-6 left-6 text-xs tracking-[0.2em] text-white">
-                            PAMANA / 02
-                        </span>
-                    </div>
-                </div>
-
-                {/* Booking strip */}
-                <div className="mt-24 flex flex-col justify-between gap-8 border-t border-[#243D39]/20 pt-10 md:flex-row md:items-center lg:mt-36">
-                    <p className="font-serif text-2xl italic text-[#243D39] md:text-3xl">
-                        Your next favorite memory begins here.
-                    </p>
-
-                    <a
-                        href="https://www.facebook.com/PamanaBeachHouse"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[#243D39] hover:opacity-60"
-                    >
-                        Book Your Stay
-                        <ArrowRight size={19} />
-                    </a>
-                </div>
-
+                                <a
+                                    href={messenger}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-10 inline-flex items-center gap-5 border-b border-[#243D39] pb-3 text-xs uppercase tracking-[0.2em] text-[#243D39] transition-all hover:gap-8"
+                                >
+                                    Check Availability
+                                    <ArrowUpRight size={18} />
+                                </a>
+                            </Reveal>
+                        </div>
+                    )
+                })}
             </div>
         </section>
     )

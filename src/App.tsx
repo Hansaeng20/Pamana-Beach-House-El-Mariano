@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
-import DayAtPamana from './components/DayAtPamana'
 import TripPlanner from './components/TripPlanner'
 import GettingThere from './components/GettingThere'
 import Hero from './components/Hero'
@@ -24,7 +23,6 @@ function App() {
       <Marquee />
       <Story />
       <Highlights />
-      <DayAtPamana />
       <Stay />
       <PerfectFor />
       <Gallery />
